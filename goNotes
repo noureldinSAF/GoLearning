@@ -46,3 +46,21 @@ func main() {
 }
 
 3- when you use a for loop for slice, you need for index, value. if you want to ignore on of them replace it by _ 
+4- Anonymous function : quick functions, it doesn't have a name, you assign it to a variable. use it when you are in another function
+ex: 
+func main() {
+    fib := func(n int) int { ... } // OK: Assigning a value to a variable
+}
+
+5- In Go, if you want an anonymous function to call itself, you must declare the variable before you define the function
+ex: 
+var fib func(n int) int
+
+fib = func(n int) int {
+    if n < 2 {
+        return n
+    }
+    return fib(n-1) + fib(n-2)
+}
+
+
