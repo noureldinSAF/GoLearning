@@ -89,7 +89,7 @@ pointer: 0x42131100
 
 4- Struct 
 Uses a variable that has a collection of different variable types. 
-```
+```go
 package main
 
 import "fmt"
