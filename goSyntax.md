@@ -3,8 +3,8 @@ Resources: https://gobyexample.com/
 These are the new concepts: 
 
 1. Switch
-
-i := 2
+```go
+    i := 2
     fmt.Print("Write ", i, " as ")
     switch i {
     case 1:
@@ -13,13 +13,15 @@ i := 2
         fmt.Println("two")
     case 3:
         fmt.Println("three")
+
 output: 
 Write 2 as two
+```
 
 2- closures 
 A function that returns another function, and saving the value in memory after it finishes. if you call it again, it will depend on the last returned value.
 ex:
-
+```go
 package main
 
 import "fmt"
@@ -52,10 +54,11 @@ PS F:\Red teaming\automation course> go run "f:\Red teaming\automation course\ma
 8
 16
 2
-
+```
 3- pointers => pass the variable by reference not by value, so you can edit its original value 
 To get the reference of variable i use &i, to get the value of this reference in function use *i 
 ex: 
+```go
 package main
 
 import "fmt"
@@ -86,7 +89,7 @@ initial: 1
 zeroval: 1
 zeroptr: 0
 pointer: 0x42131100
-
+```
 4- Struct 
 Uses a variable that has a collection of different variable types. 
 ```go
@@ -110,10 +113,11 @@ func main() {
 	fmt.Println("Name:", p.name)
 	fmt.Println("Age:", p.age)
 }
-```
+
 PS F:\Red teaming\automation course> go run "f:\Red teaming\automation course\main.go"
 Name: Alice
 Age: 30
+```
 
 
 
