@@ -1,5 +1,6 @@
 1- You can return more than one value in functions (  Multiple Return Values ) 
 ex: 
+```go
 package main
 import "fmt"
 
@@ -21,8 +22,9 @@ $ go run multiple-return-values.go
 3
 7
 7
-
+```
 2- You can use unknown number of arguments in a function ( Variadic Functions ), go deals with arguments in this case as a slice
+```go
 package main
 import "fmt"
 
@@ -44,8 +46,9 @@ func main() {
     nums := []int{1, 2, 3, 4}
     sum(nums...)
 }
+```
+3- when you use a for loop for slice, you need for index, value. if you want to ignore one of them replace it by _ 
 
-3- when you use a for loop for slice, you need for index, value. if you want to ignore on of them replace it by _ 
 4- Anonymous function : quick functions, it doesn't have a name, you assign it to a variable. use it when you are in another function
 ex: 
 func main() {
@@ -54,6 +57,7 @@ func main() {
 
 5- In Go, if you want an anonymous function to call itself, you must declare the variable before you define the function
 ex: 
+```go
 var fib func(n int) int
 
 fib = func(n int) int {
@@ -62,5 +66,8 @@ fib = func(n int) int {
     }
     return fib(n-1) + fib(n-2)
 }
-
-
+```
+## Important !!!
+6- Looping over an array of 100 mg, creates another 100 mg. So it is more garbage in the memory.
+instead, use a pointer to pass the variable by reference which is just 4 - 8 bytes.
+if you have a struct called paerson and you will create an array of it. Don't use []person use []*person
