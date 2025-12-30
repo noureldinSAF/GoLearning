@@ -53,7 +53,7 @@ PS F:\Red teaming\automation course> go run "f:\Red teaming\automation course\ma
 16
 2
 
-3- pointers => pass the variable by reference not by value, so you can edit it is original value 
+3- pointers => pass the variable by reference not by value, so you can edit its original value 
 To get the reference of variable i use &i, to get the value of this reference in function use *i 
 ex: 
 package main
@@ -87,6 +87,33 @@ zeroval: 1
 zeroptr: 0
 pointer: 0x42131100
 
+4- Struct 
+Uses a variable that has a collection of different variable types. 
+```
+package main
+
+import "fmt"
+
+type person struct {
+    name string
+    age  int
+}
+
+func main() {
+
+    p := person{
+
+		name: "Alice",
+		age: 30,
+	}
+
+	fmt.Println("Name:", p.name)
+	fmt.Println("Age:", p.age)
+}
+```
+PS F:\Red teaming\automation course> go run "f:\Red teaming\automation course\main.go"
+Name: Alice
+Age: 30
 
 
 
