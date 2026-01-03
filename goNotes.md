@@ -110,3 +110,13 @@ If you create a string, the default is "" (Empty string).
 If you create a Pointer, Map, Slice, Channel, or Interface, the default is nil.
 
 10- You can use cobra library instead of flag library to make many modes of your tool ( sub commands ) 
+
+11- Run these 3 lines in vs code to update the github repostry with the modification you made in the local code 
+```go
+git add .
+git commit -m "Description of what I changed"
+git push
+```
+
+
+
