@@ -818,3 +818,64 @@ Scanning URL: http://lastsite.com
 Scanning URL: http://finalsite.com
 Total scanning time: 20.0038062s
 ```
+
+17- Logging 
+```go
+package main 
+
+import (
+	"fmt"
+	"github.com/cyinnove/logify"
+)
+
+func main() {
+
+	logify.MaxLevel = logify.Silent		// Set maximum log level to Debug
+	logify.Silentf("This is a silent log message")
+	logify.Errorf("Failed to connect to database")
+	logify.Infof("Found 10 subdomains")
+	logify.Warningf("Disk space is running low")
+	logify.Debugf("Found 10 subdomains")
+	logify.Silentf("This is a silent log message")
+
+	fmt.Println("Logging completed.")
+
+}
+```
+The order of log levels is :
+Null Level = iota
+	Fatal
+	Silent
+	Label
+	Misc
+	Error
+	Info
+	Warning
+	Debug
+	Verbose
+
+18- Flag  ( tool arguments setup ) by flag library 
+```go
+package main 
+
+import (
+	"flag"
+)
+
+func main() {
+
+	flag.String("d", "google.com", "The domain to scan")
+	flag.Int("c" , 10, "Number of concurrent workers")
+
+	flag.Parse()
+
+}
+
+PS F:\Red teaming\automation course> go run .\main.go -h                                 
+Usage of C:\Users\Nour\AppData\Local\Temp\go-build2611408874\b001\exe\main.exe:
+  -c int
+        Number of concurrent workers (default 10)
+  -d string
+        The domain to scan (default "google.com")
+
+```
