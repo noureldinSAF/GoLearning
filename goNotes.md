@@ -117,6 +117,48 @@ git add .
 git commit -m "Description of what I changed"
 git push
 ```
+12- Differences Between %v, %+v, %#v 
+```go
+func main() {
+
+	type person struct {
+		name string
+		age  int
+	}
+	p := person{name: "Alice", age: 30}
+
+	fmt.Printf("Person: %v\n", p) //Person: {Alice 30}
+	fmt.Printf("Person: %+v\n", p) // Person: {name:Alice age:30}
+	fmt.Printf("Person: %#v\n", p) // Person: main.person{name:"Alice", age:30}
+	scanner.Scan()
+}
+```
+
+13- fmt.Printf() 
+```go
+func main() {
+
+	fmt.Printf("|%10s|\n", "test")    //|        test|
+	fmt.Printf("|%-10s|\n", "test")   //|test        |
+	fmt.Printf("|%*s|\n", 10, "test") //|        test|
+
+	fmt.Printf("Number: %d\n", 42)        //Number: 42
+
+	fmt.Printf("Pi: %.2f\n", 3.14159) //Pi: 3.14
+
+	fmt.Printf("Hex: %#x\n", 255) //Hex: 0xff
+
+	fmt.Printf("Percent: %.2f%%\n", 99.5) //Percent: 99.50%
+
+	fmt.Printf("Scientific: %.2e\n", 12345.6789) //Scientific: 1.23e+04
+
+	fmt.Printf("Binary: %b\n", 10) //Binary: 1010
+
+	fmt.Printf("Unicode: %U\n", 'A') //Unicode: U+0041
+
+	test := "example"
+	fmt.Printf("Pointer: %p\n", &test) //Pointer: 0xc0000120b0
 
 
-
+}
+```
