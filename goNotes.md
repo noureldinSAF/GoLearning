@@ -203,3 +203,17 @@ go get github.com/gen2brain/beeep
 git remote set-url origin https://github.com/noureldinSAF/AutoCourse.git
 git pull origin main --allow-unrelated-histories
 ```
+
+19- How to Install your code in another device ( vps ) 
+```bash
+root@BountyBox:/home/AutoHunting/AutoRegister# git init -b main
+Initialized empty Git repository in /home/AutoHunting/AutoRegister/.git/
+root@BountyBox:/home/AutoHunting/AutoRegister# git add .
+root@BountyBox:/home/AutoHunting/AutoRegister# git remote add origin https://github.com/noureldinSAF/AutoRegister.git
+root@BountyBox:/home/AutoHunting/AutoRegister# git pull origin main
+Username for 'https://github.com': noureldinSAF
+Password for 'https://noureldinSAF@github.com': <Paste-your-personal-access-token>
+```
+
+
+
