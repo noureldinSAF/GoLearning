@@ -165,33 +165,35 @@ func main() {
 
 14- intialize a project with github 
 ```bash
-# 1. Initialize the folder as a Git project
-git init -b main
-
-# 2. Add your files to the "staging area"
-git add .
-
-# 3. Create your first save point (commit)
-git commit -m "First commit: Initial setup"
-
-# 4. Link your local folder to GitHub (replace URL with your actual repo link)
-git remote add origin https://github.com/YOUR_USERNAME/YOUR_REPO_NAME.git
-
-# 5. Push your code to GitHub for the first time
-git push -u origin main
+go mod init github.com/yourname/AutoRegister
+go mod tidy
+go run ./cmd/main.go
 ```
 
 15- update the project to github 
 ```bash
-Stage: git add . (tells Git which changes to include).
+# 1. Initialize the folder
+git init -b main
 
-Commit: git commit -m "Added subfinder automation script" (labels the change).
+# 2. Stage all files
+git add .
 
-Push: git push (uploads the changes to GitHub).
+# 3. Commit your files locally
+git commit -m "Initial project setup"
+
+# 4. Link to GitHub (Replace with your actual URL)
+git remote add origin https://github.com/YOUR_USERNAME/YOUR_REPO_NAME.git
+
+# 5. Push to GitHub
+git push -u origin main
 ```
 
 16- pull 
 ```bash
 # Downloads and merges the latest changes from GitHub
 git pull origin main
+```
+17- If you want to Add a package online 
+```bash
+go get github.com/gen2brain/beeep
 ```
