@@ -163,14 +163,14 @@ func main() {
 }
 ```
 
-14- intialize a project with github 
+14- intialize a project connecting to github 
 ```bash
 go mod init github.com/yourname/AutoRegister
 go mod tidy
 go run ./cmd/main.go
 ```
 
-15- update the project to github 
+15- initialize and update the project to github 
 ```bash
 # 1. Initialize the folder
 git init -b main
@@ -196,4 +196,10 @@ git pull origin main
 17- If you want to Add a package online 
 ```bash
 go get github.com/gen2brain/beeep
+```
+
+18- git remote and git pull while current remote 
+```bash
+git remote set-url origin https://github.com/noureldinSAF/AutoCourse.git
+git pull origin main --allow-unrelated-histories
 ```
