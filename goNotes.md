@@ -162,3 +162,36 @@ func main() {
 
 }
 ```
+
+14- intialize a project with github 
+```bash
+# 1. Initialize the folder as a Git project
+git init -b main
+
+# 2. Add your files to the "staging area"
+git add .
+
+# 3. Create your first save point (commit)
+git commit -m "First commit: Initial setup"
+
+# 4. Link your local folder to GitHub (replace URL with your actual repo link)
+git remote add origin https://github.com/YOUR_USERNAME/YOUR_REPO_NAME.git
+
+# 5. Push your code to GitHub for the first time
+git push -u origin main
+```
+
+15- update the project to github 
+```bash
+Stage: git add . (tells Git which changes to include).
+
+Commit: git commit -m "Added subfinder automation script" (labels the change).
+
+Push: git push (uploads the changes to GitHub).
+```
+
+16- pull 
+```bash
+# Downloads and merges the latest changes from GitHub
+git pull origin main
+```
