@@ -169,7 +169,15 @@ go mod init github.com/yourname/AutoRegister
 go mod tidy
 go run ./cmd/main.go
 ```
+15- How to convert the the run go cmd to tool name ? 
+```go
+1- Normal command : go run . -asn AS17012
+2- build tool name: go build -o asnmap .
+3- the new cmd : ./asnmap -asn AS17012
 
+
+
+```
 15- initialize and update the project to github 
 ```bash
 # 1. Initialize the folder
