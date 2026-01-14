@@ -2,7 +2,8 @@ Resources: https://gobyexample.com/
 
 These are the new concepts: 
 
-1. Switch
+1. How to change a value based on cases ? 
+Switch
 ```go
     i := 2
     fmt.Print("Write ", i, " as ")
@@ -18,7 +19,8 @@ output:
 Write 2 as two
 ```
 
-2- closures 
+2- How to use a function cumulatively... run the function, save the new value in memory, run the function again based on the last value...so on. 
+closures 
 A function that returns another function, and saving the value in memory after it finishes. if you call it again, it will depend on the last returned value.
 ex:
 ```go
@@ -55,7 +57,9 @@ PS F:\Red teaming\automation course> go run "f:\Red teaming\automation course\ma
 16
 2
 ```
-3- pointers => pass the variable by reference not by value, so you can edit its original value 
+3- How to ignore rubbish in memory? How to deal With variables based on their reference not their value ? 
+
+pointers => pass the variable by reference not by value, so you can edit its original value 
 To get the reference of variable i use &i, to get the value of this reference in function use *i 
 ex: 
 ```go
@@ -90,7 +94,8 @@ zeroval: 1
 zeroptr: 0
 pointer: 0x42131100
 ```
-4- Struct 
+4- How to create a new type containing a collection of strings, integers,...etc ?
+Struct 
 Uses a variable that has a collection of different variable types. 
 ```go
 package main
@@ -118,7 +123,9 @@ PS F:\Red teaming\automation course> go run "f:\Red teaming\automation course\ma
 Name: Alice
 Age: 30
 ```
-5- Constructor - A method to assign values to struct aoutamatically 
+5- How to assign values to struct aoutamatically ? 
+Constructors 
+
 ```go
 package main
 
@@ -143,8 +150,13 @@ func main() {
 	fmt.Println("Name:", p.name)
 	fmt.Println("Age:", p.age)
 }
+
+PS F:\Red teaming\automation course> go run "f:\Red teaming\automation course\main.go"
+Name: Alice
+Age: 30
 ```
-6- Here is the updated past code with getter method to get the name, 
+6- How to enforce the function to work with one type only ?
+Here is the updated past code with getter method to get the name, 
 struct function (reciever ) methodName() reutrnType {}
 ```go
 package main
@@ -217,7 +229,9 @@ func measure(g geometry) {
     fmt.Println(g.perim())
 }
 
-func detectCircle(g geometry) {
+// How to run a function with a specific type, not all types under the generic type ?
+// If it rectangle type, it will run the the conde inside if {} 
+func detectRectangle(g geometry) {
     if n, ok := g.(rect); ok {
         fmt.Println("rect with width", n.width, "height", n.height)
     }
@@ -243,7 +257,9 @@ PS F:\Red teaming\automation course> go run "f:\Red teaming\automation course\ma
 31.41592653589793
 rect with width 3 height 4
 ```
-8- Channels
+8- How to ensure that a function has been run before, then doing another action based on it ? 
+
+Channels
 
 ```go
 package main
@@ -266,7 +282,8 @@ PS F:\Red teaming\automation course> go run "f:\Red teaming\automation course\ma
 Hello, World!
 ```
 
-9- Channel buffering 
+9- How to limit the number of channel connections ?  
+Channel buffering 
 ```go
 package main
 
