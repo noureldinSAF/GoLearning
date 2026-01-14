@@ -69,12 +69,15 @@ fib = func(n int) int {
 }
 ```
 ## Important !!!
-6- Looping over an array of 100 mg, creates another 100 mg. So it is more garbage in the memory.
+6- How to Save memory ? 
+Looping over an array of 100 mg, creates another 100 mg. So it is more garbage in the memory.
 instead, use a pointer to pass the variable by reference which is just 4 - 8 bytes.
+
 if you have a struct called paerson and you will create an array of it. Don't use []person use []*person
 
 7- comma ok adioms. 
-Logic => If g object is rect type, assign it to n, and OK becomes true. else Ok becomes false
+
+Logic => If myMap[key] is assigned to value, OK will be true. Otherwise, ok will be false
 ```go
 value, ok := myMap[key]
 if ok {
@@ -84,7 +87,7 @@ if ok {
 }
 
 ```
-8- If with a short statement 
+8- How to run an operation before if condition is checked ? 
 ```go
 //  1. Setup       2. Separator    3. The Check
 if  x := 10    ;   x > 5           {
