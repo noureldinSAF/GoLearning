@@ -51,10 +51,11 @@ func main() {
 
 4- Anonymous function : quick functions, it doesn't have a name, you assign it to a variable. use it when you are in another function
 ex: 
+```
 func main() {
     fib := func(n int) int { ... } // OK: Assigning a value to a variable
 }
-
+```
 5- In Go, if you want an anonymous function to call itself, you must declare the variable before you define the function
 ex: 
 ```go
