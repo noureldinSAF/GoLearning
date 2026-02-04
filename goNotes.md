@@ -228,4 +228,29 @@ Password for 'https://noureldinSAF@github.com': <Paste-your-personal-access-toke
 ```
 
 
+20- How to use cashing to save effort? 
+check commoncrawl tool in URL_Enum_v2
 
+
+```go
+import ( "sync" )
+
+var (
+	once sync.Once
+	cashed string
+	casheErr error 
+)
+
+func latestCDXAPI(client *http.Client) (string, error) {
+	once.Do( func () {
+		cashed, casheErr = fetchLatestCDXAPI(client)
+	})
+	return cashed, casheErr
+}
+```
+
+21- How to increase the memory limit to recieve a large body 
+```go
+sc := bufio.NewScanner(resp.Body)
+sc.Buffer(make([]byte, 0, 1024*1024), 2*1024*1024)
+```
