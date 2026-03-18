@@ -43,7 +43,3 @@ Check out my [Reconnaissance Tool](../AutoHunting/) – a Go‑based recon frame
 ## 🤝 Contributing
 
 Contributions and improvements are welcome!  If you have useful Go snippets or corrections, feel free to open an issue or submit a pull request.  Please include a brief description of your change and ensure your code follows idiomatic Go formatting (`go fmt`).
-
-## 💄 License
-
-This repository is licensed under the MIT License.  See the [LICENSE](LICENSE) file for details.
